@@ -35,7 +35,15 @@ Subnets are not handle by this module.
 
 ## Outputs
 
-No output.
+| Name | Description |
+|------|-------------|
+| address\_space | The list of address spaces used by the virtual network. |
+| ddospp\_id | The ID of the DDoS Protection Plan. |
+| ddospp\_virtual\_network\_ids | A list of Virtual Network ID's associated with the DDoS Protection Plan. |
+| id | The virtual NetworkConfiguration ID. |
+| location | The location/region where the virtual network is created. |
+| name | The name of the virtual network. |
+| resource\_group\_name | The name of the resource group in which to create the virtual network. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
