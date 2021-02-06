@@ -23,11 +23,11 @@ Subnets are not handle by this module.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | address\_space | The address space that is used the virtual network.<br>You can supply more than one address space. | `list(string)` | n/a | yes |
-| bgp\_community | The BGP community attribute in format <as-number>:<community-value>. | `string` | `""` | no |
-| ddos\_plan\_id | DDoS protection plan ID to use one already created. | `string` | `""` | no |
-| ddos\_plan\_name | DDos protection plan name to create a new plan. | `string` | `""` | no |
-| dns-servers | List of IP addresses of DNS servers. | `list(string)` | `[]` | no |
-| enable\_ddos\_plan | Whether or not to enable DDoS protection plan.<br>DDoS can be enabled by creating a new plan or use one that already exists.<br>If ddos\_plan\_id is not empty, it will be used otherwise ddos\_plan\_name will be<br>used to create a new plan. | `bool` | `false` | no |
+| create\_ddos\_pp | Whether or not to create DDoS protection plan. | `bool` | `false` | no |
+| ddos\_pp\_name | DDos protection plan name of an existing plan or to create a new one.<br>If create\_ddos\_pp is false and enable\_ddos\_pp is true this variable<br>must reference a DDoS protection plan already created and<br>ddos\_pp\_resource\_group\_name must also be defined. | `string` | `""` | no |
+| ddos\_pp\_resource\_group\_name | Resource Group name if using existing DDoS protection plan. | `string` | `""` | no |
+| dns\_servers | List of IP addresses of DNS servers. | `list(string)` | `[]` | no |
+| enable\_ddos\_pp | Whether or not to enable DDoS protection plan.<br>DDoS can be enabled by creating a new plan or use one that already exists. | `bool` | `false` | no |
 | name | The name of the virtual network.<br>Changing this forces a new resource to be created. | `string` | n/a | yes |
 | resource\_group\_name | The name of the resource group in which to create the virtual network.<br>The Resource Group must already exist. | `string` | n/a | yes |
 | tags | A mapping of tags which should be assigned to Resources. | `map(string)` | `{}` | no |

@@ -6,29 +6,34 @@ EOT
   type        = string
 }
 
-variable "enable_ddos_plan" {
+variable "enable_ddos_pp" {
   description = <<EOT
 Whether or not to enable DDoS protection plan.
 DDoS can be enabled by creating a new plan or use one that already exists.
-If ddos_plan_id is not empty, it will be used otherwise ddos_plan_name will be
-used to create a new plan.
 EOT
   type        = bool
   default     = false
 }
 
-variable "ddos_plan_name" {
+variable "create_ddos_pp" {
+  description = "Whether or not to create DDoS protection plan."
+  type        = bool
+  default     = false
+}
+
+variable "ddos_pp_name" {
   description = <<EOT
-DDos protection plan name to create a new plan.
+DDos protection plan name of an existing plan or to create a new one.
+If create_ddos_pp is false and enable_ddos_pp is true this variable
+must reference a DDoS protection plan already created and
+ddos_pp_resource_group_name must also be defined.
 EOT
   type        = string
   default     = ""
 }
 
-variable "ddos_plan_id" {
-  description = <<EOT
-DDoS protection plan ID to use one already created.
-EOT
+variable "ddos_pp_resource_group_name" {
+  description = "Resource Group name if using existing DDoS protection plan."
   type        = string
   default     = ""
 }
@@ -55,16 +60,10 @@ EOT
   type        = list(string)
 }
 
-variable "dns-servers" {
+variable "dns_servers" {
   description = "List of IP addresses of DNS servers."
   type        = list(string)
   default     = []
-}
-
-variable "bgp_community" {
-  description = "The BGP community attribute in format <as-number>:<community-value>."
-  type        = string
-  default     = ""
 }
 
 variable "vm_protection_enabled" {
