@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestVirtualNetworkBasicExample(t *testing.T) {
+func TestVirtualNetworkUseExistingExample(t *testing.T) {
 	t.Parallel()
 
 	// Create values for Terraform
@@ -17,7 +17,7 @@ func TestVirtualNetworkBasicExample(t *testing.T) {
 	// Configure Terraform setting up a path to Terraform code.
 	terraformOptions := &terraform.Options{
 		// Relative path to the Terraform dir
-		TerraformDir: "../examples/basic",
+		TerraformDir: "../examples/use_existing_ddospp",
 	}
 
 	// At the end of the test, run `terraform destroy` to clean up any resources that were created
