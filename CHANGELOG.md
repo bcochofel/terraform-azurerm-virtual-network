@@ -3,10 +3,19 @@
 ## [Unreleased]
 
 
+<a name="1.1.4"></a>
+## [1.1.4] - 2021-02-06
+### Test
+- remove test for compatibility
+
+
 <a name="1.1.3"></a>
 ## [1.1.3] - 2021-02-06
 ### Test
 - tests for all examples
+
+### Pull Requests
+- Merge pull request [#5](https://github.com/bcochofel/terraform-azurerm-virtual-network/issues/5) from bcochofel:tests
 
 
 <a name="1.1.2"></a>
@@ -58,7 +67,8 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-02-05
 
-[Unreleased]: https://github.com/bcochofel/terraform-azurerm-virtual-network/compare/1.1.3...HEAD
+[Unreleased]: https://github.com/bcochofel/terraform-azurerm-virtual-network/compare/1.1.4...HEAD
+[1.1.4]: https://github.com/bcochofel/terraform-azurerm-virtual-network/compare/1.1.3...1.1.4
 [1.1.3]: https://github.com/bcochofel/terraform-azurerm-virtual-network/compare/1.1.2...1.1.3
 [1.1.2]: https://github.com/bcochofel/terraform-azurerm-virtual-network/compare/1.1.1...1.1.2
 [1.1.1]: https://github.com/bcochofel/terraform-azurerm-virtual-network/compare/1.1.0...1.1.1
