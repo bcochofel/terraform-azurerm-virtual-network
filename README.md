@@ -32,7 +32,6 @@ module "vnet" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 ## Requirements
 
 | Name | Version |
@@ -45,6 +44,19 @@ module "vnet" {
 | Name | Version |
 |------|---------|
 | azurerm | >= 2.41.0 |
+
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [azurerm_network_ddos_protection_plan](https://registry.terraform.io/providers/hashicorp/azurerm/2.41.0/docs/data-sources/network_ddos_protection_plan) |
+| [azurerm_network_ddos_protection_plan](https://registry.terraform.io/providers/hashicorp/azurerm/2.41.0/docs/resources/network_ddos_protection_plan) |
+| [azurerm_resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/2.41.0/docs/data-sources/resource_group) |
+| [azurerm_virtual_network](https://registry.terraform.io/providers/hashicorp/azurerm/2.41.0/docs/resources/virtual_network) |
 
 ## Inputs
 
@@ -72,7 +84,6 @@ module "vnet" {
 | location | The location/region where the virtual network is created. |
 | name | The name of the virtual network. |
 | resource\_group\_name | The name of the resource group in which to create the virtual network. |
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 
