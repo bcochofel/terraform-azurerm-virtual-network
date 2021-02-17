@@ -3,10 +3,19 @@
 ## [Unreleased]
 
 
+<a name="1.2.0"></a>
+## [1.2.0] - 2021-02-17
+### Feat
+- naming restrictions
+
+
 <a name="1.1.6"></a>
 ## [1.1.6] - 2021-02-16
 ### Chore
 - versions.tf
+
+### Pull Requests
+- Merge pull request [#8](https://github.com/bcochofel/terraform-azurerm-virtual-network/issues/8) from bcochofel/versions
 
 
 <a name="1.1.5"></a>
@@ -85,7 +94,8 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-02-05
 
-[Unreleased]: https://github.com/bcochofel/terraform-azurerm-virtual-network/compare/1.1.6...HEAD
+[Unreleased]: https://github.com/bcochofel/terraform-azurerm-virtual-network/compare/1.2.0...HEAD
+[1.2.0]: https://github.com/bcochofel/terraform-azurerm-virtual-network/compare/1.1.6...1.2.0
 [1.1.6]: https://github.com/bcochofel/terraform-azurerm-virtual-network/compare/1.1.5...1.1.6
 [1.1.5]: https://github.com/bcochofel/terraform-azurerm-virtual-network/compare/1.1.4...1.1.5
 [1.1.4]: https://github.com/bcochofel/terraform-azurerm-virtual-network/compare/1.1.3...1.1.4

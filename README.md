@@ -1,6 +1,7 @@
 # terraform-azurerm-virtual-network
 
 This module creates Azure Virtual Network and also let's you create a DDoS protection plan (or use one already created).
+This module also validates the name according to the Azure Resource naming restrictions
 
 Subnets are not handled by this module.
 
@@ -13,7 +14,7 @@ provider "azurerm" {
 
 module "rg" {
   source  = "bcochofel/resource-group/azurerm"
-  version = "1.2.0"
+  version = "1.4.0"
 
   name     = "rg-vnet-basic-example"
   location = "North Europe"
@@ -37,7 +38,7 @@ module "vnet" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.20 |
+| terraform | >= 0.13.0 |
 | azurerm | >= 2.41.0 |
 
 ## Providers
@@ -54,8 +55,8 @@ No Modules.
 
 | Name |
 |------|
-| [azurerm_network_ddos_protection_plan](https://registry.terraform.io/providers/hashicorp/azurerm/2.41.0/docs/data-sources/network_ddos_protection_plan) |
 | [azurerm_network_ddos_protection_plan](https://registry.terraform.io/providers/hashicorp/azurerm/2.41.0/docs/resources/network_ddos_protection_plan) |
+| [azurerm_network_ddos_protection_plan](https://registry.terraform.io/providers/hashicorp/azurerm/2.41.0/docs/data-sources/network_ddos_protection_plan) |
 | [azurerm_resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/2.41.0/docs/data-sources/resource_group) |
 | [azurerm_virtual_network](https://registry.terraform.io/providers/hashicorp/azurerm/2.41.0/docs/resources/virtual_network) |
 
@@ -97,6 +98,7 @@ go test -v
 
 ## References
 
+* [Azure Resource naming restrictions](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules)
 * [Azure Virtual Network](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview)
 * [Azure DDoS Protection Plan](https://docs.microsoft.com/en-us/azure/ddos-protection/ddos-protection-overview)
 * [Terraform azurerm_virtual_network](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network)
