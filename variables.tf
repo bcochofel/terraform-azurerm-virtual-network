@@ -52,7 +52,7 @@ EOT
   type        = string
 
   validation {
-    condition     = length(var.name) >= 2 && length(var.name) <= 64 && can(regex("^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$", var.name))
+    condition     = length(var.name) >= 1 && length(var.name) <= 80 && can(regex("^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$", var.name))
     error_message = "Invalid name (check Azure Resource naming restrictions for more info)."
   }
 }
