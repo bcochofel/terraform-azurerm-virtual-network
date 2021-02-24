@@ -33,7 +33,6 @@ module "vnet" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 ## Requirements
 
 | Name | Version |
@@ -55,10 +54,10 @@ No Modules.
 
 | Name |
 |------|
-| [azurerm_network_ddos_protection_plan](https://registry.terraform.io/providers/hashicorp/azurerm/2.41.0/docs/data-sources/network_ddos_protection_plan) |
-| [azurerm_network_ddos_protection_plan](https://registry.terraform.io/providers/hashicorp/azurerm/2.41.0/docs/resources/network_ddos_protection_plan) |
-| [azurerm_resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/2.41.0/docs/data-sources/resource_group) |
-| [azurerm_virtual_network](https://registry.terraform.io/providers/hashicorp/azurerm/2.41.0/docs/resources/virtual_network) |
+| [azurerm_network_ddos_protection_plan](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/network_ddos_protection_plan) |
+| [azurerm_network_ddos_protection_plan](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_ddos_protection_plan) |
+| [azurerm_resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) |
+| [azurerm_virtual_network](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network) |
 
 ## Inputs
 
@@ -88,13 +87,30 @@ No Modules.
 | resource\_group\_name | The name of the resource group in which to create the virtual network. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
-
 ## Run tests
 
 ```bash
 cd test/
 go test -v
 ```
+
+## pre-commit hooks
+
+This repository uses [pre-commit](https://pre-commit.com/).
+
+To install execute:
+
+```bash
+pre-commit install --install-hooks -t commit-msg
+```
+
+To run the hooks you need to install:
+
+* [terraform](https://github.com/hashicorp/terraform)
+* [terraform-docs](https://github.com/terraform-docs/terraform-docs)
+* [TFLint](https://github.com/terraform-linters/tflint)
+* [TFSec](https://github.com/tfsec/tfsec)
+* [checkov](https://github.com/bridgecrewio/checkov)
 
 ## References
 
