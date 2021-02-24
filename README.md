@@ -33,6 +33,7 @@ module "vnet" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Requirements
 
 | Name | Version |
@@ -86,6 +87,7 @@ No Modules.
 | name | The name of the virtual network. |
 | resource\_group\_name | The name of the resource group in which to create the virtual network. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 
 ## Run tests
 
