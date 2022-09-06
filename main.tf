@@ -20,12 +20,11 @@ resource "azurerm_network_ddos_protection_plan" "ddospp" {
 }
 
 resource "azurerm_virtual_network" "vnet" {
-  name                  = var.name
-  resource_group_name   = data.azurerm_resource_group.rg.name
-  location              = data.azurerm_resource_group.rg.location
-  address_space         = var.address_space
-  dns_servers           = var.dns_servers
-  vm_protection_enabled = var.vm_protection_enabled
+  name                = var.name
+  resource_group_name = data.azurerm_resource_group.rg.name
+  location            = data.azurerm_resource_group.rg.location
+  address_space       = var.address_space
+  dns_servers         = var.dns_servers
 
   dynamic "ddos_protection_plan" {
     for_each = local.ddos_pp_id != "" ? ["ddos_protection_plan"] : []

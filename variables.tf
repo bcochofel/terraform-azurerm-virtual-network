@@ -70,9 +70,3 @@ variable "dns_servers" {
   type        = list(string)
   default     = []
 }
-
-variable "vm_protection_enabled" {
-  description = "Whether to enable VM protection for all the subnets in this Virtual Network."
-  type        = bool
-  default     = false
-}
