@@ -7,14 +7,14 @@ Subnets are not handled by this module.
 
 ## Usage
 
-```hcl:examples/basic/main.tf
+```hcl
 provider "azurerm" {
   features {}
 }
 
 module "rg" {
   source  = "bcochofel/resource-group/azurerm"
-  version = "1.4.0"
+  version = "1.6.0"
 
   name     = "rg-vnet-basic-example"
   location = "North Europe"
@@ -33,59 +33,57 @@ module "vnet" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.13.0 |
-| azurerm | >= 2.41.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 2.41.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| azurerm | >= 2.41.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >= 2.41.0 |
 
 ## Modules
 
-No Modules.
+No modules.
 
 ## Resources
 
-| Name |
-|------|
-| [azurerm_network_ddos_protection_plan](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/network_ddos_protection_plan) |
-| [azurerm_network_ddos_protection_plan](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_ddos_protection_plan) |
-| [azurerm_resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) |
-| [azurerm_virtual_network](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network) |
+| Name | Type |
+|------|------|
+| [azurerm_network_ddos_protection_plan.ddospp](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_ddos_protection_plan) | resource |
+| [azurerm_virtual_network.vnet](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network) | resource |
+| [azurerm_network_ddos_protection_plan.ddospp](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/network_ddos_protection_plan) | data source |
+| [azurerm_resource_group.rg](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| address\_space | The address space that is used the virtual network.<br>You can supply more than one address space. | `list(string)` | n/a | yes |
-| create\_ddos\_pp | Whether or not to create DDoS protection plan. | `bool` | `false` | no |
-| ddos\_pp\_name | DDos protection plan name of an existing plan or to create a new one.<br>If create\_ddos\_pp is false and enable\_ddos\_pp is true this variable<br>must reference a DDoS protection plan already created and<br>ddos\_pp\_resource\_group\_name must also be defined. | `string` | `""` | no |
-| ddos\_pp\_resource\_group\_name | Resource Group name if using existing DDoS protection plan. | `string` | `""` | no |
-| dns\_servers | List of IP addresses of DNS servers. | `list(string)` | `[]` | no |
-| enable\_ddos\_pp | Whether or not to enable DDoS protection plan.<br>DDoS can be enabled by creating a new plan or use one that already exists. | `bool` | `false` | no |
-| name | The name of the virtual network.<br>Changing this forces a new resource to be created. | `string` | n/a | yes |
-| resource\_group\_name | The name of the resource group in which to create the virtual network.<br>The Resource Group must already exist. | `string` | n/a | yes |
-| tags | A mapping of tags which should be assigned to Resources. | `map(string)` | `{}` | no |
-| vm\_protection\_enabled | Whether to enable VM protection for all the subnets in this Virtual Network. | `bool` | `false` | no |
+| <a name="input_address_space"></a> [address\_space](#input\_address\_space) | The address space that is used the virtual network.<br>You can supply more than one address space. | `list(string)` | n/a | yes |
+| <a name="input_create_ddos_pp"></a> [create\_ddos\_pp](#input\_create\_ddos\_pp) | Whether or not to create DDoS protection plan. | `bool` | `false` | no |
+| <a name="input_ddos_pp_name"></a> [ddos\_pp\_name](#input\_ddos\_pp\_name) | DDos protection plan name of an existing plan or to create a new one.<br>If create\_ddos\_pp is false and enable\_ddos\_pp is true this variable<br>must reference a DDoS protection plan already created and<br>ddos\_pp\_resource\_group\_name must also be defined. | `string` | `""` | no |
+| <a name="input_ddos_pp_resource_group_name"></a> [ddos\_pp\_resource\_group\_name](#input\_ddos\_pp\_resource\_group\_name) | Resource Group name if using existing DDoS protection plan. | `string` | `""` | no |
+| <a name="input_dns_servers"></a> [dns\_servers](#input\_dns\_servers) | List of IP addresses of DNS servers. | `list(string)` | `[]` | no |
+| <a name="input_enable_ddos_pp"></a> [enable\_ddos\_pp](#input\_enable\_ddos\_pp) | Whether or not to enable DDoS protection plan.<br>DDoS can be enabled by creating a new plan or use one that already exists. | `bool` | `false` | no |
+| <a name="input_name"></a> [name](#input\_name) | The name of the virtual network.<br>Changing this forces a new resource to be created. | `string` | n/a | yes |
+| <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | The name of the resource group in which to create the virtual network.<br>The Resource Group must already exist. | `string` | n/a | yes |
+| <a name="input_tags"></a> [tags](#input\_tags) | A mapping of tags which should be assigned to Resources. | `map(string)` | `{}` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| address\_space | The list of address spaces used by the virtual network. |
-| ddospp\_id | The ID of the DDoS Protection Plan. |
-| ddospp\_virtual\_network\_ids | A list of Virtual Network ID's associated with the DDoS Protection Plan. |
-| id | The virtual network ID. |
-| location | The location/region where the virtual network is created. |
-| name | The name of the virtual network. |
-| resource\_group\_name | The name of the resource group in which to create the virtual network. |
+| <a name="output_address_space"></a> [address\_space](#output\_address\_space) | The list of address spaces used by the virtual network. |
+| <a name="output_ddospp_id"></a> [ddospp\_id](#output\_ddospp\_id) | The ID of the DDoS Protection Plan. |
+| <a name="output_ddospp_virtual_network_ids"></a> [ddospp\_virtual\_network\_ids](#output\_ddospp\_virtual\_network\_ids) | A list of Virtual Network ID's associated with the DDoS Protection Plan. |
+| <a name="output_id"></a> [id](#output\_id) | The virtual network ID. |
+| <a name="output_location"></a> [location](#output\_location) | The location/region where the virtual network is created. |
+| <a name="output_name"></a> [name](#output\_name) | The name of the virtual network. |
+| <a name="output_resource_group_name"></a> [resource\_group\_name](#output\_resource\_group\_name) | The name of the resource group in which to create the virtual network. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 

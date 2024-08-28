@@ -3,8 +3,9 @@ provider "azurerm" {
 }
 
 module "rg" {
+  #checkov:skip=CKV_TF_1:Ensure Terraform module sources use a commit hash
   source  = "bcochofel/resource-group/azurerm"
-  version = "1.4.0"
+  version = "1.6.0"
 
   name     = "rg-vnet-create-ddospp-example"
   location = "North Europe"
