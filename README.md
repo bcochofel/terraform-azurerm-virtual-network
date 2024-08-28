@@ -86,6 +86,13 @@ No modules.
 | <a name="output_resource_group_name"></a> [resource\_group\_name](#output\_resource\_group\_name) | The name of the resource group in which to create the virtual network. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
+## Contributing
+
+This repository uses semantic versioning and conventional commits. Some automation need this to work correctly.
+There are 2 GitHub Workflows:
+
+- lint.yml: runs on Pull Request to validate Terraform
+- release.yml: runs on merge to the default branch. This workflow generates a Changelog file and creates a GitHub release based on the conventional commit messages.
 
 ## Run tests
 
@@ -101,6 +108,7 @@ This repository uses [pre-commit](https://pre-commit.com/).
 To install execute:
 
 ```bash
+pre-commit install
 pre-commit install --install-hooks -t commit-msg
 ```
 
@@ -111,6 +119,8 @@ To run the hooks you need to install:
 * [TFLint](https://github.com/terraform-linters/tflint)
 * [TFSec](https://github.com/tfsec/tfsec)
 * [checkov](https://github.com/bridgecrewio/checkov)
+* [goimports](https://pkg.go.dev/golang.org/x/tools/cmd/goimports)
+* [golint](https://pkg.go.dev/golang.org/x/lint/golint)
 
 ## References
 
